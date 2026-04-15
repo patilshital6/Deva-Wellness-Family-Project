@@ -23,7 +23,7 @@ function About() {
       setCurrentIndex((prev) => (prev + 1) % images.length);
     }, 3000);
     return () => clearInterval(interval);
-  }, []);
+  }, [images.length]);
 
   return (
     <div style={styles.container}>

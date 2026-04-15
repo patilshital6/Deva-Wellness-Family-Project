@@ -34,7 +34,7 @@ function App() {
       );
     }, 6000);
     return () => clearInterval(interval);
-  }, []);
+  }, [slideImages.length]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -119,10 +119,10 @@ function App() {
             <div style={styles.heroContent}>
               <div style={styles.heroTextWrapper}>
                 <h1>
-                  <marquee>
+                  <div style={styles.marqueeText}>
                     <span style={{ color: "#fff" }}>Build Your </span>
                     <span style={{ color: "#ffa500" }}>Best Body</span>
-                  </marquee>
+                  </div>
                 </h1>
               </div>
               <p style={styles.highlightText}>
@@ -322,6 +322,14 @@ const styles = {
     backgroundColor: "rgba(0,0,0,0.6)",
     padding: "16px 35px",
     borderRadius: "12px",
+  },
+
+  marqueeText: {
+    display: "inline-block",
+    fontSize: "2rem",
+    fontWeight: "700",
+    letterSpacing: "1px",
+    textTransform: "uppercase",
   },
 
   highlightText: {
